@@ -14,7 +14,7 @@ public class IntercepterConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //可以指定拦截地址
-        registry.addInterceptor(new LoginInterceptor());
+        //注册拦截器 忽略后面的路径（hystrix-Dashboard界面的路径）
+        registry.addInterceptor(new LoginInterceptor()).excludePathPatterns("/hystrix/**","/webjars/**");
     }
 }

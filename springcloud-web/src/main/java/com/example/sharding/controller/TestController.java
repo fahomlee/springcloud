@@ -32,6 +32,7 @@ public class TestController {
     @ApiOperation("获取配置参数")
     @RequestMapping(value = "/getConfigValue", method = RequestMethod.GET)
     @ResponseBody
+    @NoLogin
     public String getConfigValue() {
         return godlike;
     }
